@@ -1,0 +1,180 @@
+.edit {
+  padding: 30px 25vw;
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    a {
+      color: #00d5ff;
+      font-size: 18px;
+      width: fit-content;
+    }
+  }
+
+  .top{
+    display: flex;
+    width: 800px;
+    .left {
+      width: 300px;
+
+      .mainImg {
+        width: 300px;
+        position: relative;
+        img {
+          width: 300px;
+          height: 350px;
+          object-fit: cover;
+        }
+
+        svg {
+          position: absolute;
+          color: red;
+          right: 0;
+          cursor: pointer;
+          visibility: hidden;
+        }
+        &:hover {
+          svg {
+            visibility: visible;
+          }
+        }
+      }
+
+      button {
+        height: 30px;
+        padding: 2px 25px;
+        margin: 5px auto;
+      }
+
+      .public {
+        button {
+          background-color: #03a003;
+          color: white;
+        }
+
+      }
+    }
+
+    .right {
+      margin-left: 35px;
+      width: 100%;
+
+      h2 {
+        margin: 0;
+      }
+
+      input, textarea {
+        font-size: 16px;
+        width: 25vw;
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin-bottom: 5px;
+
+      }
+
+      textarea {
+        resize: none;
+        height: 74px;
+      }
+
+      p {
+        color: red;
+      }
+
+      .success {
+        color: green;
+      }
+
+    }
+  }
+
+  .emptyMainItem {
+    margin-right: 15px;
+    width: 300px;
+    height: 350px;
+    background-color: gray;
+    color: #545353;
+    text-align: center;
+    line-height: 350px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .bottom {
+    display: flex;
+    margin: 20px 0;
+
+    div:last-child {
+      margin-right: 0px;
+    }
+    .emptyItem {
+      margin-right: 15px;
+      width: 90px;
+      height: 130px;
+      background-color: gray;
+      color: #545353;
+      text-align: center;
+      line-height: 130px;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .item {
+      margin-right: 15px;
+      position: relative;
+      width: 90px;
+      cursor: pointer;
+      img {
+        width: 90px;
+        height: 130px;
+        object-fit: cover;
+        display: block;
+      }
+
+      svg {
+        position: absolute;
+        color: red;
+        right: 0;
+        cursor: pointer;
+        visibility: hidden;
+        top: 0;
+      }
+      &:hover {
+        svg {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .edit {
+    width: 300px;
+    padding: 0 !important;
+    margin: 0 auto;
+
+    .top {
+      flex-direction: column;
+      width: 250px;
+
+      .right {
+        width: 300px;
+        margin: 0 !important;
+
+        input, textarea {
+          width: 300px !important;
+        }
+      }
+    }
+    .bottom {
+      align-items: center;
+      .item, .emptyItem {
+      }
+    }
+
+  }
+}
+

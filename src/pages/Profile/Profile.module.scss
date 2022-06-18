@@ -1,0 +1,46 @@
+.profile {
+  padding: 30px 25vw;
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 35px;
+
+    a:first-child {
+      flex: 1;
+    }
+
+    p {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    a, p {
+      color: #00d5ff;
+      font-size: 18px;
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+
+  .list {
+    .empty {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .profile {
+    .buttons {
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      p {
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+}

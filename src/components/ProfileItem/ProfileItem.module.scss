@@ -1,0 +1,66 @@
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  h1 {
+    overflow-wrap: anywhere;
+  }
+
+  img {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+
+  .buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .public {
+      color: #02ee02;
+    }
+
+    p {
+      font-size: 20px;
+      color: red;
+      margin-right: 5px;
+    }
+
+    input {
+      transform: scale(1.4);
+      cursor: pointer;
+    }
+
+    svg {
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .item {
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      margin: unset;
+      text-align: center;
+      overflow-wrap: anywhere;
+      font-size: 22px;
+    }
+
+    img {
+      margin-right: unset;
+    }
+
+    .buttons {
+      margin-left: unset;
+      margin-top: -12px;
+    }
+  }
+}

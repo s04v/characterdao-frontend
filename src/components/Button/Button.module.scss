@@ -1,0 +1,18 @@
+.button {
+  display: block;
+  background-color: rgb(20, 7, 0);
+  border: 2px solid black;
+  border-radius: 55px;
+  width: 180px;
+  max-width: 180px;
+  height: 100%;
+  text-align: center;
+  padding: 15px 25px;
+  font-size: 18px;
+  color: red;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
