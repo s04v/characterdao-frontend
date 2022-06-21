@@ -1,11 +1,11 @@
-import styles from './ProfileItem.module.scss';
+import styles from './CharacterItem.module.scss';
 import {AiFillDelete, AiFillEdit} from "react-icons/ai";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import CharacterApi from '../../api/Character';
 import ReactDOM from 'react-dom';
 
-const ProfileItem = (props) => {
+const CharacterItem = (props) => {
     const navigate = useNavigate();
     const [isPublic, setIsPublic] = useState(props.IsPublic);
 
@@ -21,8 +21,9 @@ const ProfileItem = (props) => {
             'Photo3': props.Photo3,
             'IsPublic': !isPublic,
         };
-        CharacterApi.update(props.Id, data);
-        setIsPublic(!isPublic);
+        CharacterApi.update(props.Id, data).then(result => {
+            setIsPublic(!isPublic);
+        });
     }
 
     const onRemove = () => {
@@ -47,4 +48,4 @@ const ProfileItem = (props) => {
     );
 }
 
-export default ProfileItem;
+export default CharacterItem;

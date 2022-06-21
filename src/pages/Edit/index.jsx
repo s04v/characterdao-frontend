@@ -43,8 +43,8 @@ const Edit = (props) => {
         validateOnChange: false,
         validateOnBlur: false,
         onSubmit: (values, { setErrors }) => {
-            if(!mainImg || !pic1 || !pic2 || !pic3) {
-                setErrors({err: 'You need to upload photos'});
+            if(!mainImg) {
+                setErrors({err: 'You need to upload photo'});
                 return;
             }
 
@@ -139,7 +139,6 @@ const Edit = (props) => {
                                     </> : 'Empty' }
                             </div>
                         </div>
-                        <Button text='Upload'/>
                         <Button text='Save' onClick={() => {
                             if(submitRef.current) submitRef.current.click();
                         }}/>

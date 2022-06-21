@@ -1,6 +1,6 @@
 import styles from './Profile.module.scss';
 import Header from "../../components/Header";
-import ProfileItem from "../../components/ProfileItem";
+import CharacterItem from "../../components/CharacterItem";
 import Cookies from "universal-cookie";
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
@@ -31,7 +31,7 @@ const Profile = () => {
                 <div className={styles.list}>
                     {characters ?
                         characters.map(item => {
-                            return <ProfileItem {...item} />
+                            return <CharacterItem {...item} />
                         })
                         : <p className={styles.empty}>Empty</p>}
                 </div>
