@@ -12,7 +12,6 @@ import {
 } from "react-router-dom";
 import CheckAuth from "./helpers/CheckAuth";
 
-
 const Home = React.lazy(() => import('./pages/Home'));
 const SignIn = React.lazy(() => import('./pages/SignIn'));
 const SignUp = React.lazy(() => import('./pages/SignUp'));
@@ -20,8 +19,7 @@ const Edit = React.lazy(() => import('./pages/Edit'));
 const Profile = React.lazy(() => import('./pages/Profile'));
 const Character = React.lazy(() => import('./pages/Character'));
 const Directory = React.lazy(() => import ('./pages/Directory'));
-
-
+const VerifyEmail = React.lazy(() => import ('./pages/VerifyEmail'));
 
 function App() {
   return (
@@ -37,6 +35,7 @@ function App() {
                     <Route path='/profile' element={<CheckAuth><Profile /></CheckAuth>} />
                     <Route path='/directory' element={<Directory />} />
                     <Route path='/character/:id' element={<Character />} />
+                    <Route path='/verify/:token' element={<VerifyEmail />} />
                 </Routes>
             </BrowserRouter>
         </React.Suspense>

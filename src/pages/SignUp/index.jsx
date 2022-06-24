@@ -8,9 +8,11 @@ import Error from "../../components/Error";
 import AccountApi from "../../api/Account";
 import {useNavigate} from "react-router-dom";
 import Cookies from "universal-cookie";
+import {useState} from "react";
 
 const SignUp = () => {
     const navigate = useNavigate();
+    const [success, setSuccess] = useState(false);
 
     const SignInSchema = Yup.object().shape({
         Email: Yup.string().email('Wrong email format').required('Email is a required field'),
@@ -27,13 +29,11 @@ const SignUp = () => {
         validateOnBlur: false,
         onSubmit: (values, { setErrors }) => {
             AccountApi.signUp(values).then(res => {
-                const { jwt } = res.data;
-                const cookies = new Cookies();
-                cookies.set('jwt', jwt);
-                navigate('/profile');
+                setSuccess(true);
             }).catch(e => {
                 const error = e.response ? e.response.data : e.message;
                 setErrors({err: error});
+                setSuccess(false);
             });
         }
     })
@@ -51,6 +51,9 @@ const SignUp = () => {
                     <input type='password' {...formik.getFieldProps("Password")} />
                 </div>
                 <Button text='Send' type='submit'/>
+                {   success ?
+                    <p style={{color: 'green'}}>Verify your email address</p>
+                    : null }
                 { formik.errors ?
                     <Error>{formik.errors[Object.keys(formik.errors)[0]]}</Error>
                     : null }

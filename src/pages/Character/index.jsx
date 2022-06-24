@@ -16,7 +16,7 @@ const Character = () => {
         CharacterApi.get(id).then(result => {
             setCharacter(result.data);
         }).catch(e => {
-            navigate('/directory');
+            // navigate('/directory');
         })
     }, []);
     return (

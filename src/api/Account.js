@@ -8,9 +8,14 @@ const signUp = (data) => {
     return Api.post('/api/account/signup', data);
 }
 
+const verify = (token) => {
+    return Api.get(`/api/account/verify/${token}`);
+}
+
 const helper = {
     signIn: signIn,
-    signUp: signUp
+    signUp: signUp,
+    verify: verify
 }
 
 export default helper;

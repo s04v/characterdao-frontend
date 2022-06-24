@@ -1,0 +1,21 @@
+.bg {
+  background: linear-gradient(180deg, #0E0E0E 14.58%, #1C150C 50.52%, #050402 84.9%);
+  height: 100vh;
+}
+
+.success {
+  text-align: center;
+  font-size: 24px;
+  color: green;
+}
+
+.fail {
+  text-align: center;
+  font-size: 24px;
+  color: red;
+}
+
+.message {
+  text-align: center;
+  font-size: 14px;
+}

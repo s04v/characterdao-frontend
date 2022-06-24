@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 const CharacterItem = (props) => {
     const navigate = useNavigate();
     const [isPublic, setIsPublic] = useState(props.IsPublic);
+    const [error, setError] = useState(false);
 
     const handleChange = () => {
         const data = {
@@ -23,6 +24,12 @@ const CharacterItem = (props) => {
         };
         CharacterApi.update(props.Id, data).then(result => {
             setIsPublic(!isPublic);
+        }).catch(() => {
+            setError(true);
+
+            setTimeout(() => {
+                setError(false);
+            }, 2000)
         });
     }
 
@@ -34,15 +41,19 @@ const CharacterItem = (props) => {
     }
     return (
         <div className={styles.item} >
+
             <img src={props.MainPhoto} />
             <a href={`/character/${props.Id}`} ><h1>{props.Name}</h1></a>
             <div className={styles.buttons}>
-                {
-                    isPublic ? <p className={styles.public}>Public</p> : <p>Private</p>
-                }
+                {error ? <p className={styles.error}>Upload all photos</p> : null }
+               <div>
+                   {
+                       isPublic ? <p className={styles.public}>Public</p> : <p>Private</p>
+                   }
                 <input type='checkbox' checked={isPublic} onClick={handleChange}/>
                 <AiFillEdit size={30} onClick={() => navigate(`/edit/${props.Id}`)}/>
                 <AiFillDelete size={30} onClick={onRemove}/>
+               </div>
             </div>
         </div>
     );
