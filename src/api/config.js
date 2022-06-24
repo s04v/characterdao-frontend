@@ -2,8 +2,8 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 
 const Api = axios.create({
-    baseURL: `http://localhost:3001`,
-    // baseURL: `https://character-dao.herokuapp.com`,
+    // baseURL: `http://localhost:3001`,
+    baseURL: `https://character-dao.herokuapp.com`,
     timeout: 5000,
     withCredentials: true,
 });
